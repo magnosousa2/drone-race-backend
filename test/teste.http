@@ -12,19 +12,19 @@ content-type: application/json
     },
     {
         "comando": "rc 0 0 0 0",
-        "tempoDuracaoComando": 1000
+        "tempoDuracaoComando": 2000
     },
     {
-        "comando": "rc 0 50 0 0",
-        "tempoDuracaoComando": 5000
+        "comando": "rc 0 100 0 0",
+        "tempoDuracaoComando": 3000
     },
     {
         "comando": "rc 0 0 0 0",
-        "tempoDuracaoComando": 1000
+        "tempoDuracaoComando": 2000
     },
     {
-        "comando": "rc 0 -60 0 0",
-        "tempoDuracaoComando": 5000
+        "comando": "rc 0 -100 0 0",
+        "tempoDuracaoComando": 3000
     },
     {
         "comando": "rc 0 0 0 0",

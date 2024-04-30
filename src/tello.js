@@ -5,6 +5,7 @@ const child_process = require('child_process');
 const stateDefinition = require('./stateDefinition.json');
 const configs = require('../config.json');
 const logger = require('./logger.js');
+const { timeStamp } = require('console');
 
 class Tello {
     /**
@@ -189,7 +190,9 @@ class Tello {
     disconnect() {
         this.controlClient.close();
         this.stateServer.close();
-        this.ffmpegProcess.kill();
+        if(this.ffmpegProcess){
+            this.ffmpegProcess.kill();
+        }
         this.connected = false;
     }
 

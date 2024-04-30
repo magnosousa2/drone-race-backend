@@ -12,6 +12,7 @@ server.use(Express.json());
 
 server.listen(PORT_SERVER, IP_SERVER, () => {
     console.log('Servidor local conectado')
+    drone.connect();
 })
 
 /**
@@ -21,9 +22,6 @@ server.listen(PORT_SERVER, IP_SERVER, () => {
 server.post('/executar-rota', (req, res) => {
     const rota = req.body;
     console.log(req.body)
-
-    drone.connect();
-    console.log('Conectou');
 
     console.log(rota)
     executar(rota, 0);
@@ -48,6 +46,7 @@ server.post('/executar-rota', (req, res) => {
 
 async function executar(comandos, index) {
     await executarComandosRecursivo(comandos, index);
+
 }
 
 async function executarComandosRecursivo(comandos, index) {
