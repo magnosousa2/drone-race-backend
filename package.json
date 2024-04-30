@@ -5,7 +5,8 @@
   "main": "./src/index.js",
   "scripts": {
     "tello": "node ./src/cli.js",
-    "tello-server": "node ./src/tello-server.js"
+    "tello-server": "node ./src/tello-server.js",
+    "start": "nodemon ./src/autotello.js"
   },
   "bin": {
     "tello": "./src/cli.js",
@@ -29,7 +30,9 @@
   "homepage": "https://github.com/harleylara/tello-js",
   "dependencies": {
     "commander": "^10.0.0",
+    "express": "^4.19.2",
     "ffmpeg-static": "^5.1.0",
+    "nodemon": "^3.1.0",
     "ws": "^8.6.0"
   }
 }

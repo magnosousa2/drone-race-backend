@@ -1,0 +1,37 @@
+POST http://localhost:8080/executar-rota HTTP/1.1
+content-type: application/json
+
+[
+    {
+        "comando": "takeoff",
+        "tempoDuracaoComando": 2000
+    },
+    {
+        "comando": "rc 0 0 50 0",
+        "tempoDuracaoComando": 3000
+    },
+    {
+        "comando": "rc 0 0 0 0",
+        "tempoDuracaoComando": 1000
+    },
+    {
+        "comando": "rc 0 50 0 0",
+        "tempoDuracaoComando": 5000
+    },
+    {
+        "comando": "rc 0 0 0 0",
+        "tempoDuracaoComando": 1000
+    },
+    {
+        "comando": "rc 0 -60 0 0",
+        "tempoDuracaoComando": 5000
+    },
+    {
+        "comando": "rc 0 0 0 0",
+        "tempoDuracaoComando": 1000
+    },
+    {
+        "comando": "land",
+        "tempoDuracaoComando": 1000
+    }
+]

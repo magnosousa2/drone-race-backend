@@ -45,7 +45,6 @@ class Tello {
         this.controlClient.on("message", (msg, rinfo) => {
             const response = msg.toString();
             logger.info(`Drone response: ${response} from ${rinfo.address}:${rinfo.port}`);
-
             if (!this.connected && response == 'ok') {
                 // Initial connection
                 this.connected = true;
@@ -121,6 +120,7 @@ class Tello {
      * @param {String} command Command to send
      */
     sendCmd(cmd) {
+
         return new Promise((resolve, reject) => {
             const msg = Buffer.from(cmd);
 
