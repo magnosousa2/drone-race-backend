@@ -35,6 +35,16 @@ server.post('/executar-rota', (req, res) => {
 
 
 
+/**
+ * 
+ * @param {*} comandos 
+ * @param {*} index 
+ * As 3 função abaixo utilizam recursividade para iterar sob o array de objetos 
+ * que contém os comandos da rota. 
+ * Essa recursividade é necssária para utilizar as chamadas de forma síncrona,
+ * executando os comandos apenas após finalizado o timeout correspondente a
+ * cada comando anterior.
+ */
 
 async function executar(comandos, index) {
     await executarComandosRecursivo(comandos, index);
