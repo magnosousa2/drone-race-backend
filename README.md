@@ -1,3 +1,36 @@
+# DRONE-RACE - SEMANA PAULO FREIRE
+
+Para executar esse projeto siga os seguintes passos:
+
+1) Abra o git bash command liner no diretório onde queira rodar o projeto.
+2) Dentro do command liner do git bash clone esse projeto com o seguinte comando:
+   git clone https://github.com/magnosousa2/drone-race-backend.git
+4) Após clonado o projeto execute, na raíz do projeto o comando "npm install" para baixar as bibliotecas necessárias para a execução do projeto.
+5) Navegue até o diretório "./src" com o comando "cd": exemplo: "cd ./src"
+6) Antes de seguir o passo a seguir, inicie o drone Tello e conecte o notebook á rede wifi do mesmo.
+7) Agora execute o comando "npm start" ou "npm run start". Automaticamente será executado o projeto e subirá o servidor em "localhost:8080".
+
+   # Testando a automação.
+1) No VS CODE, verifique se a extensão REST CLIENT está instalada. Se não estiver, instale-a, pois a utilizaremos para os testes iniciais da aplicação.
+2) Ainda no VSCODE, navegue até o diretório ./test. Nele há um arquivo chamado test.http. Ele já contém uma chamada de testes para validarmos se a aplicação consequiu se conectar ao drone. Abra-o no VSCODE e clique em Send Request para executar o primeiro teste.
+
+* O endpoint abaixo é o que vocês usarão para enviar as rotas previamente cadastradas no banco de dados pelos endpoints de vocês. Este endpoint espera um json com um array de objetos no sequinte formato:
+<br>
+[<br>
+  &nbsp&nbsp&nbsp{<br>
+     &nbsp&nbsp&nbsp&nbsp&nbsp&nbspcomando: string,<br>
+     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsptempoDuracaoComando: int<br>
+  &nbsp&nbsp&nbsp}<br>
+]<br>
+
+
+POST http://localhost:8080/executar-rota HTTP/1.1
+
+   
+
+
+
+
 # Tello Javascript
 
 A minimalist Javascript library for programming Tello drones with a WebSocket interface for control, state and videoframes.
