@@ -1,17 +1,14 @@
 const Tello = require('./tello.js');
 const Express = require('express');
-
+const config = require('./config/config.js')
 const server = Express();
 
 const drone = new Tello();
 
-const IP_SERVER = '127.0.0.1';
-const PORT_SERVER = '8080';
-
 server.use(Express.json());
 
-server.listen(PORT_SERVER, IP_SERVER, () => {
-    console.log('Servidor local conectado')
+server.listen(config.portaServidorAPI, config.ipServidorAPI, () => {
+    console.log(`Servidor local conectado em ${config.ipServidorAPI}:${config.portaServidorAPI}` )
     drone.connect();
 })
 
@@ -26,11 +23,8 @@ server.post('/executar-rota', (req, res) => {
     console.log(rota)
     executar(rota, 0);
 
-    console.log('Finalizou')
-
     return res.send(rota);
 });
-
 
 
 /**
@@ -65,7 +59,9 @@ async function executarComando(comando) {
             console.error('ERRO NO COMANDO ', comando.comando, '. Erro: ', error);
             await executarComando(comando);
         });
+
     console.log('DELAY: ', comando.tempoDuracaoComando)
+
     await drone.wait(comando.tempoDuracaoComando);
 }
 
