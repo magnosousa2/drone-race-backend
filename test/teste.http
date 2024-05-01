@@ -15,16 +15,20 @@ content-type: application/json
         "tempoDuracaoComando": 2000
     },
     {
-        "comando": "rc 0 100 0 0",
-        "tempoDuracaoComando": 3000
+        "comando": "rc 0 50 0 0",
+        "tempoDuracaoComando": 6000
     },
     {
         "comando": "rc 0 0 0 0",
         "tempoDuracaoComando": 2000
     },
     {
-        "comando": "rc 0 -100 0 0",
-        "tempoDuracaoComando": 3000
+        "comando": "rc 0 0 0 50",
+        "tempoDuracaoComando": 5000
+    },
+    {
+        "comando": "rc 0 50 0 0",
+        "tempoDuracaoComando": 6000
     },
     {
         "comando": "rc 0 0 0 0",
